@@ -13,9 +13,18 @@ return children
 function App() {
 
   return (
-    <>
-     
-    </>
+    <AuthProvider>
+     <Router>
+      <Routes>
+        <Route path="/" element={
+          <ProtectedRoute>
+            <Home/>
+          </ProtectedRoute>
+        }/>
+        <Route path="/login" element={<Login/>}/>
+      </Routes>
+     </Router>
+    </AuthProvider>
   )
 }
 
