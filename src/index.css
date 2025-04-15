@@ -2,10 +2,10 @@
 
 
 @font-face {
-    font-family: "Gilroy";
-    src: url(../public/fonts/Gilroy.ttf);
+    font-family: "Inter";
+    src: url(../public/fonts/Inter.ttf);
 }
 
 *{
-    font-family: "Gilroy";
+    font-family: "Inter";
 }
