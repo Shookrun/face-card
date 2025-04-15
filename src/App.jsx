@@ -1,31 +1,22 @@
-import { BrowserRouter as Router,Routes,Route,Navigate } from "react-router-dom"
-import { AuthProvider,useAuth } from "./context/AuthContext"
-import Home from "./pages/Home"
-import Login from "./pages/Login"
+// App.jsx
+import { Route, Routes, Navigate } from "react-router-dom"; // Import necessary components
+import { useAuth } from "./context/AuthContext";
+import Login from "./pages/Login";
+import Home from "./pages/Home";
 
-const ProtectedRoute = ({children})=>{
-const {user} = useAuth()
-if(!user){
-  return <Navigate to="/login" />
+function PrivateRoute({ children }) {
+  const { isAuthenticated } = useAuth();
+  return isAuthenticated ? children : <Navigate to="/login" />;
 }
-return children
-}
+
 function App() {
-
   return (
-    <AuthProvider>
-     <Router>
-      <Routes>
-        <Route path="/" element={
-          <ProtectedRoute>
-            <Home/>
-          </ProtectedRoute>
-        }/>
-        <Route path="/login" element={<Login/>}/>
-      </Routes>
-     </Router>
-    </AuthProvider>
-  )
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route path="/" element={<PrivateRoute><Home /></PrivateRoute>} />
+      <Route path="*" element={<Navigate to="/login" />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;

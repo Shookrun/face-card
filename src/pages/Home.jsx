@@ -1,11 +1,24 @@
-import { useAuth } from "../context/AuthContext"
+import React from 'react'
+import { useAuth } from '../context/AuthContext'
+import { useNavigate } from 'react-router-dom'
+
 const Home = () => {
-    const {user,logout} = useAuth()
+    const {logout} = useAuth()
+    const navigate = useNavigate()
+
+    const handleLogout = () => {
+        logout()
+        navigate("/login")
+    }
   return (
-    <div>
-        <h1>Hi {user?.name} !</h1>
-        <button onClick={logout}>Logout</button>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="bg-white p-6 rounded shadow">
+      <h1 className="text-2xl font-bold mb-4">Hoş geldin Admin</h1>
+      <button onClick={handleLogout} className="bg-red-500 text-white px-4 py-2 rounded">
+        Çıkış Yap
+      </button>
     </div>
+  </div>
   )
 }
 
