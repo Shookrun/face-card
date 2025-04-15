@@ -2,6 +2,7 @@ import React from 'react'
 import { useAuth } from '../context/AuthContext'
 import { useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
+import DashboardPanel from '../components/dashboard-panel'
 
 const Home = () => {
     const {logout} = useAuth()
@@ -14,6 +15,7 @@ const Home = () => {
   return (
     <div className="">
       <Navbar/>
+      <DashboardPanel/>
   </div>
   )
 }
