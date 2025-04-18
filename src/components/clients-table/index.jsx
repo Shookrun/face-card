@@ -44,18 +44,15 @@ const ClientsTable = () => {
       
       const columns = [
         { label: 'ID', accessor: 'id' },
-        { label: 'Məkan', accessor: 'mekan' },
-        { label: 'Müştəri', accessor: 'musteri' },
-        { label: 'Telefon', accessor: 'telefon' },
-        { label: 'Məbləğ, ₼', accessor: 'mebleg' },
-        { label: 'Endirim', accessor: 'endirim' },
-        { label: 'Tarix', accessor: 'tarix' },
+        { label: 'Xərclənən', accessor: 'mekan' },
+        { label: 'Endirim', accessor: 'musteri' },
+        { label: 'Tarixi', accessor: 'telefon' }
       ];
   return (
-    <div>
+    <div className='w-full '>
         <FilterableTable data={data} columns={columns} title='Müştərilər'
          extraFilter={({ filters, handleFilterChange }) => (
-            <div className="flex items-center border rounded px-2 py-1 gap-2 w-[200px]">
+            <div className="flex items-center border rounded px-2 py-1 gap-2 ">
               <Filter className="w-4 h-4 text-gray-500" />
               <input
                 type="text"

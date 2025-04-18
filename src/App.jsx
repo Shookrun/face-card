@@ -9,6 +9,7 @@ import Locations from "./pages/Locations";
 import NewMerchant from "./pages/NewMerchant";
 import Navbar from "./components/Navbar";
 import Clients from "./pages/Clients";
+import Client from "./pages/Client";
 
 function PrivateRoute({ children }) {
   const { isAuthenticated } = useAuth();
@@ -27,6 +28,7 @@ function App() {
       <Route path="/locations" element={<PrivateRoute><Locations /></PrivateRoute>} />
       <Route path="/newmerchant" element={<PrivateRoute><NewMerchant /></PrivateRoute>} />
       <Route path="/clients" element={<PrivateRoute><Clients /></PrivateRoute>} />
+      <Route path="/client" element={<PrivateRoute><Client /></PrivateRoute>} />
     </Routes>
   );
 }
