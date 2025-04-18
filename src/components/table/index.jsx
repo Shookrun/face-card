@@ -65,7 +65,7 @@ const Table = () => {
 
   return (
     <div className="container mx-auto flex flex-col gap-4  py-2 px-40 mt-10">
-      {/* Title & Search */}
+     
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-3xl font-bold">Son əməliyyatlar</h1>
         <div className="flex items-center border rounded px-2 py-1 gap-2 w-[200px]">
@@ -80,7 +80,7 @@ const Table = () => {
         </div>
       </div>
 
-      {/* Table */}
+
       <div className="overflow-x-auto">
         <table className="min-w-full text-sm text-left border-t border-gray-300">
           <thead>
