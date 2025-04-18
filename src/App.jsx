@@ -3,6 +3,7 @@ import { Route, Routes, Navigate } from "react-router-dom"; // Import necessary 
 import { useAuth } from "./context/AuthContext";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
+import History from "./pages/History";
 
 function PrivateRoute({ children }) {
   const { isAuthenticated } = useAuth();
@@ -15,6 +16,7 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/" element={<PrivateRoute><Home /></PrivateRoute>} />
       <Route path="*" element={<Navigate to="/login" />} />
+      <Route path="/history" element={<PrivateRoute><History /></PrivateRoute>} />
     </Routes>
   );
 }
