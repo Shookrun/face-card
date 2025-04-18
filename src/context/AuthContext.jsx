@@ -29,13 +29,13 @@ export const AuthProvider = ({ children }) => {
     return false;
   };
 
-  // Logout function
+
   const logout = () => {
     localStorage.removeItem("token");
     setToken(null);
   };
 
-  // isAuthenticated logic
+
   const isAuthenticated = !!token;
 
   return (

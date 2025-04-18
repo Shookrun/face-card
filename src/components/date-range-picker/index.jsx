@@ -9,9 +9,11 @@ export default function DateRangePicker() {
   const [endDate, setEndDate] = useState(null);
 
   return (
-  <div className='flex items-center gap-2'>
-      <div className="flex items-center border rounded-md px-4 py-2 shadow-sm w-fit space-x-4 bg-white">
-      <div className="flex items-center divide-x">
+  <div className='flex  justify-between  w-full items-center gap-2'>
+     <h2 className='text-4xl font-bold'>Dashboard</h2>
+      <div className='flex items-center gap-4'>
+      <div className="flex  items-center border rounded-md px-4 py-2 shadow-sm  space-x-4 bg-white">
+      <div className="flex  items-center divide-x">
         <DatePicker
           selected={startDate}
           onChange={(date) => setStartDate(date)}
@@ -37,6 +39,7 @@ export default function DateRangePicker() {
       </div>
     </div>
         <FaStore className="w-5 h-5 text-red-600" />
+      </div>
   </div>
   );
 }

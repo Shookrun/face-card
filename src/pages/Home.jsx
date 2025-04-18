@@ -14,8 +14,9 @@ const Home = () => {
     }
   return (
     <div className="">
-      <Navbar/>
+      <Navbar logout={handleLogout}/>
       <DashboardPanel/>
+    
   </div>
   )
 }
