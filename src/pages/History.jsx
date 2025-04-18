@@ -1,12 +1,12 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import Table from '../components/table'
+import HistoryTable from '../components/history-table'
 
 const History = () => {
   return (
     <div>
         <Navbar/>
-        <Table/>
+        <HistoryTable/>
     </div>
   )
 }
